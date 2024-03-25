@@ -1,0 +1,43 @@
+﻿@model EntityLayer.Concrete.Contact
+
+@{
+    ViewData["Title"] = "DetailsMessage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Mesaj Detayını Görüntüleme Sayfası</h4>
+
+            <form class="forms-sample" method="post">
+                @Html.HiddenFor(x => x.ContactID)
+                <div class="form-group">
+                    <label for="exampleInputName1">Gönderen Ad-Soyadı</label>
+                    <input type="text" asp-for="Name" class="form-control"  />
+                    @Html.ValidationMessageFor(x => x.Name)
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="exampleInputName1">Gönderen Mail Adresi</label>
+                    <input type="text" asp-for="Mail" class="form-control" />
+                    @Html.ValidationMessageFor(x => x.Mail)
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Gönderme Tarihi</label>
+                    <input type="text" asp-for="Date" class="form-control"  />
+                    @Html.ValidationMessageFor(x => x.Date)
+                </div>
+                <br />
+                <div class="form-group">
+                    <label for="exampleInputName1">Mesaj</label>
+                    <textarea class="form-control" cols="5" rows="20" asp-for="Message"></textarea>
+                    @Html.ValidationMessageFor(x => x.Message)
+                </div>
+                <br />
+
+            </form>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+@await Component.InvokeAsync("_HeadPartial")
+<body>
+	<div class="header">
+		<div class="container">
+
+			@await Component.InvokeAsync("_TopAdressPartial")
+
+
+			@await Component.InvokeAsync("_SocialMediaPartial")
+
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+
+	@await Component.InvokeAsync("_NavbarPartial")
+
+	<div class="modal fade" id="myModal1" tabindex="-1" role="dialog">
+						<!-- Modal1 -->
+							<div class="modal-dialog">
+							<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4>In Harvest</h4>
+										<img src="images/banner1.jpg" alt=" " class="img-responsive">
+										<h5>ÇEVRE & SÜRDÜRÜLEBİLİRLİK</h5>
+										<p>Sürdürülebilir tarım uygulamaları, kimyasal gübre ve pestisit kullanımını en aza indirerek, toprak, su ve biyoçeşitliliği koruma amacını taşır. Organik tarım, geleneksel tarım yöntemlerine dayanarak, doğal döngülerle uyumlu bir şekilde üretim yapmayı hedefler. Bu yaklaşımlar, tarımın uzun vadeli sağlığını koruyarak gelecek nesillere daha yaşanabilir bir çevre bırakmayı amaçlar. Ayrıca, su kaynaklarının etkin bir şekilde yönetilmesi ve toprak sağlığının korunması gibi unsurlar, çevre ve sürdürülebilirlik ilkelerinin bir parçasını oluşturur. Bu şekilde, tarım sektörü hem ürün verimliliğini artırabilir hem de doğal kaynakları koruyarak çevresel dengeyi sürdürmeyi başarabilir.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+	@await Component.InvokeAsync("_AboutPartial")
+
+	<!-- //about-bottom -->
+<!--sevices-->
+	@await Component.InvokeAsync("_ServicePartial")
+<!--//sevices-->
+<!-- team -->
+	@await Component.InvokeAsync("_TeamPartial")
+
+	<!-- //team -->
+<!--blog -->
+	@await Component.InvokeAsync("_AnnouncementPartial")
+
+<!-- //blog -->
+						<
+			
+ <!--/gallery-->
+	@await Component.InvokeAsync("_GalleryPartial")
+
+	<!--//gallery-->
+<!--footer-->
+<div class="contact-agile" id="contact">
+			<div class="container">
+			@await Component.InvokeAsync("_AddressPartial")
+
+
+
+@* 			@await Component.InvokeAsync("_ContactPartial")
+ *@
+			@await Html.PartialAsync("/Views/Default/SendMessage.cshtml")
+
+
+		</div>
+		</div>
+	@await Component.InvokeAsync("_MapPartial")
+
+	
+			<div class="copy">
+		        <p>© @DateTime.Now.Year Tüm Hakları Saklıdır <a href="#">Arda Çimen</a> </p>
+		    </div>
+<!--/footer -->
+
+<!-- js -->
+	@await Html.PartialAsync("/Views/Default/ScriptPartial.cshtml")
+
+
+</body>
+</html>

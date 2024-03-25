@@ -1,0 +1,48 @@
+﻿@model EntityLayer.Concrete.Team
+
+@{
+    ViewData["Title"] = "EditTeam";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="col-12 grid-margin stretch-card">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Takım Arkadaş Kaydı Güncelleme</h4>
+
+            <form class="forms-sample" method="post">
+                @Html.HiddenFor(x=>x.TeamID)
+                <div class="form-group">
+                    <label for="exampleInputName1">Ad-Soyad</label>
+                    <input type="text" asp-for="PersonName" class="form-control" />
+                    @Html.ValidationMessageFor(x => x.PersonName)
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Başlık</label>
+                    <input type="text" asp-for="Title" class="form-control" />
+                    @Html.ValidationMessageFor(x => x.Title)
+
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Görsel Yolu</label>
+                    <input type="text" asp-for="ImageUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Facebook Url</label>
+                    <input type="text" asp-for="FacebookUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Instagram Url</label>
+                    <input type="text" asp-for="InstagramUrl" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputName1">Twıtter Url</label>
+                    <input type="text" asp-for="TwitterUrl" class="form-control" />
+                </div>
+
+
+                <button type="submit" class="btn btn-primary me-2">Güncelle</button>
+            </form>
+        </div>
+    </div>
+</div>
